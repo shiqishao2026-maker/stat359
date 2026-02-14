@@ -32,7 +32,8 @@ class Word2Vec(nn.Module):
         super(Word2Vec, self).__init__()
         self.input_embeddings = nn.Embedding(vocab_size, embedding_dim)
         self.output_embeddings = nn.Embedding(vocab_size, embedding_dim)
-        nn.init.zeros_(self.input_embeddings.weight)
+        bound = 0.5 / embedding_dim
+        nn.init.uniform_(self.input_embeddings.weight, -bound, bound)
         nn.init.zeros_(self.output_embeddings.weight)
 
     def forward(self, center, context, negative):
