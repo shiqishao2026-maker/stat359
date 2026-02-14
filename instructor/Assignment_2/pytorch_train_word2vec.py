@@ -8,8 +8,8 @@ from tqdm import tqdm
 
 # Hyperparameters
 EMBEDDING_DIM = 100
-BATCH_SIZE = 128
-EPOCHS = 25
+BATCH_SIZE = 512  # change it to fit your memory constraints, e.g., 256, 128 if you run out of memory
+EPOCHS = 5
 LEARNING_RATE = 0.01
 NEGATIVE_SAMPLES = 5  # Number of negative samples per positive
 
